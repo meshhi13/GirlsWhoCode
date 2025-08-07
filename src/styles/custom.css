@@ -6,3 +6,16 @@ body {
   display: flex !important;
   justify-content: center !important;
 }
+
+/* Custom styles for single page flipbook */
+.stf__parent {
+  perspective: 1000px;
+  margin: 0 auto !important;
+  display: block !important;
+}
+
+.stf__wrapper {
+  transform-style: preserve-3d;
+  margin: 0 auto !important;
+  display: block !important;
+}
