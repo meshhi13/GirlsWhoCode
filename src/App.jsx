@@ -6,7 +6,7 @@ import Notebook from './Notebook';
 const App = () => {
   return (
     <div
-      className='flex min-h-full flex-col justify-center bg-cover bg-center min-h-screen overflow-hidden'
+      className='flex flex-col justify-center bg-cover bg-center min-h-screen overflow-hidden'
       style={{ backgroundImage: `url(${logo})` }}
     >
       <Notebook />
