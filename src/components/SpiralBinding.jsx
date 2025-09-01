@@ -1,4 +1,6 @@
-const SpiralBinding = ({ className = '' }) => (
+const SpiralBinding = ({ className = '', isMobile = false }) => {
+  if (isMobile) return null;
+  return (
   <div className={`absolute left-0 top-0 w-8 h-full ${className}`}>
     {Array.from({ length: 20 }, (_, i) => (
       <div
@@ -17,6 +19,7 @@ const SpiralBinding = ({ className = '' }) => (
       />
     ))}
   </div>
-);
+  );
+};
 
 export default SpiralBinding;

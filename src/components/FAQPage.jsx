@@ -55,19 +55,19 @@ const faqItems = [
   },
 ];
 
-const FAQPage = () => {
+const FAQPage = ({ isMobile = false }) => {
   const [openIndex, setOpenIndex] = useState(null);
   const toggleFaq = (index) => setOpenIndex((prev) => (prev === index ? null : index));
 
   return (
-    <div className="w-full h-full bg-white p-6 pb-0 pt-20 relative">
-      <SpiralBinding />
-      
-      <h2 className="text-lg font-bold text-gray-800 mb-6 ml-12 sticky bg-white z-10">
+    <div className={`w-full h-full bg-white ${isMobile ? 'p-4 pt-6 pb-0' : 'p-6 pt-20 pb-0'} relative`}>
+      {!isMobile && <SpiralBinding />}
+
+      <h2 className={`text-lg font-bold text-gray-800 mb-6 ${isMobile ? 'px-4' : 'ml-12 sticky bg-white z-10'}`}>
         Frequently Asked Questions
       </h2>
 
-      <div className="space-y-2 ml-12 h-[calc(100%-9rem)] overflow-y-auto pr-4">
+      <div className={`${isMobile ? 'space-y-3 px-4' : 'space-y-2 ml-12'} ${isMobile ? '' : 'h-[calc(100%-9rem)] overflow-y-auto pr-4'}`}>
         {faqItems.map((item, index) => (
           <div key={index} className="border-b border-gray-200 py-4">
             <button
