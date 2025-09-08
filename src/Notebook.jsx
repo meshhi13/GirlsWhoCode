@@ -14,6 +14,10 @@ import SponsorsPage from '@components/SponsorsPage';
 
 const Notebook = () => {
   const flipBookRef = useRef(null);
+  const aboutAndMissionRef = useRef(null);
+  const scheduleAndFAQRef = useRef(null);
+  const contactAndSponsorsRef = useRef(null);
+  
   const [currentPage, setCurrentPage] = useState(0);
   const [pageFlipInstance, setPageFlipInstance] = useState(null);
   const [windowWidth, setWindowWidth] = useState(
@@ -49,23 +53,35 @@ const Notebook = () => {
     <div className='min-h-screen'>
       <TopBanner
         pageHelper={(tab) => {
-          if (!pageFlipInstance) return;
 
+          if (!pageFlipInstance && !isMobile) return;
           switch (tab) {
             case 'About and Mission':
-              pageFlipInstance.turnToPage(1);
-              setCurrentPage(1);
+              if (isMobile) {
+                console.log(aboutAndMissionRef.current)
+                setTimeout(() => {aboutAndMissionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 10);
+              } else {
+                pageFlipInstance.turnToPage(1);
+                setCurrentPage(1);
+              }
               break;
             case 'Schedule and FAQ':
-              pageFlipInstance.turnToPage(3);
-              setCurrentPage(3);
+              if (isMobile) {
+                setTimeout(() => {scheduleAndFAQRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 10);
+              } else {
+                pageFlipInstance.turnToPage(3);
+                setCurrentPage(3);
+              }
               break;
             case 'Contact and Sponsors':
-              pageFlipInstance.turnToPage(5);
-              setCurrentPage(5);
+              if (isMobile) {
+                setTimeout(() => {contactAndSponsorsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 10);
+              } else {  
+                pageFlipInstance.turnToPage(5);
+                setCurrentPage(5);
+              }
               break;
           }
-          console.log(currentPage);
         }}
       />
 
@@ -151,7 +167,7 @@ const Notebook = () => {
 
         {/* Mobile: stacked, scrollable pages */}
         {isMobile && (
-    <div className="w-full max-w-xl px-4">
+          <div className="w-full max-w-xl px-4">
             <div className="mb-6">
               <div className="rounded-lg overflow-hidden shadow-lg bg-white">
                 <FrontCover isMobile={isMobile} />
@@ -159,7 +175,7 @@ const Notebook = () => {
             </div>
 
             <div className="space-y-4">
-              <section className="p-4 bg-white rounded-lg shadow">
+              <section ref={aboutAndMissionRef} className="p-4 bg-white rounded-lg shadow">
                 {!isMobile && <h3 className="text-lg font-semibold mb-2">About</h3>}
                 <AboutPage isMobile={isMobile} />
               </section>
@@ -169,7 +185,7 @@ const Notebook = () => {
                 <MissionPage isMobile={isMobile} />
               </section>
 
-              <section className="p-4 bg-white rounded-lg shadow">
+              <section ref={scheduleAndFAQRef} className="p-4 bg-white rounded-lg shadow">
                 {!isMobile && <h3 className="text-lg font-semibold mb-2">Schedule</h3>}
                 <SchedulePage isMobile={isMobile} />
               </section>
@@ -179,7 +195,7 @@ const Notebook = () => {
                 <FAQPage isMobile={isMobile} />
               </section>
 
-              <section className="p-4 bg-white rounded-lg shadow">
+              <section ref={contactAndSponsorsRef} className="p-4 bg-white rounded-lg shadow">
                 {!isMobile && <h3 className="text-lg font-semibold mb-2">Contact</h3>}
                 <ContactPage isMobile={isMobile} />
               </section>

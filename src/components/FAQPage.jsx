@@ -74,7 +74,6 @@ const FAQPage = ({ isMobile = false }) => {
               type="button"
               onClick={(e) => {
                 e.stopPropagation()
-                console.log("HELLO")
                 toggleFaq(index)
               }
             }

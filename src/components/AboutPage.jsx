@@ -5,7 +5,6 @@ import SpiralBinding from './SpiralBinding';
 const AboutPage = ({ isMobile = false }) => {
   return (
     <div className={`w-full h-full bg-white ${isMobile ? 'p-4 pt-6 pb-0' : 'p-6 pt-20 pb-0'} relative`}>
-      {!isMobile && <SpiralBinding />}
       <div className={`${isMobile ? 'px-4' : 'ml-12'}`}>
         <h2 className="text-lg font-bold text-gray-800 mb-4">About Us</h2>
         <p className="text-gray-700 leading-relaxed text-sm">
