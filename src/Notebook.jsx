@@ -58,7 +58,6 @@ const Notebook = () => {
           switch (tab) {
             case 'About and Mission':
               if (isMobile) {
-                console.log(aboutAndMissionRef.current)
                 setTimeout(() => {aboutAndMissionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 10);
               } else {
                 pageFlipInstance.turnToPage(1);
