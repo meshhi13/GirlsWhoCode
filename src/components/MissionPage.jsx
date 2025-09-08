@@ -3,7 +3,7 @@ import React from 'react';
 import SpiralBinding from './SpiralBinding';
 
 const MissionPage = ({ isMobile = false }) => (
-  <div className={`w-full h-full bg-white ${isMobile ? 'p-4 pt-6 pb-8' : 'p-6 pt-20 pb-8'} relative`}>
+  <div className={`w-full h-full bg-white ${isMobile ? 'p-4 pt-6 pb-6' : 'p-6 pt-20 pb-6'} relative`}>
     {!isMobile && <SpiralBinding />}
     <div className={`${isMobile ? 'px-4' : 'ml-12'}`}>
       <h2 className="text-lg font-bold text-gray-800 mb-4">Our Mission</h2>
