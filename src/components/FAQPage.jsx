@@ -60,7 +60,7 @@ const FAQPage = ({ isMobile = false }) => {
   const toggleFaq = (index) => setOpenIndex((prev) => (prev === index ? null : index));
 
   return (
-    <div className={`w-full h-full bg-white ${isMobile ? 'p-4 pt-6 pb-0' : 'p-6 pt-20 pb-0'} relative`}>
+    <div className={`w-full h-full bg-white ${isMobile ? 'p-4 pt-6 pb-8' : 'p-6 pt-20 pb-8'} relative`}>
       {!isMobile && <SpiralBinding />}
 
       <h2 className={`text-lg font-bold text-gray-800 mb-6 ${isMobile ? 'px-4' : 'ml-12 sticky bg-white z-10'}`}>
