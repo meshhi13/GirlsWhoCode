@@ -5,11 +5,13 @@ import Notebook from './Notebook';
 
 const App = () => {
   return (
-    <div
-      className='flex flex-col justify-center bg-cover bg-center min-h-screen overflow-hidden'
-      style={{ backgroundImage: `url(${logo})` }}
-    >
-      <Notebook />
+    <div className='h-full overflow-hidden m-0 overscroll-none' >
+      <div
+        className='flex flex-col justify-center min-h-full bg-repeat bg-top'
+        style={{ backgroundImage: `url(${logo})`, backgroundSize: 'auto' }}
+      >
+        <Notebook />
+      </div>
     </div>
   )
 };
