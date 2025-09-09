@@ -5,7 +5,6 @@ import SpiralBinding from './SpiralBinding';
 const SponsorsPage = ({ isMobile = false }) => {
   return (
     <div className={`w-full h-full bg-white ${isMobile ? 'p-4 pt-6 pb-6' : 'p-6 pt-20 pb-6'} relative`}>
-      {!isMobile && <SpiralBinding />}
 
       <h2 className={`text-lg font-bold text-gray-800 mb-6 ${isMobile ? 'px-4' : 'ml-12'}`}>Sponsors</h2>
 

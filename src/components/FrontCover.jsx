@@ -9,7 +9,6 @@ const FrontCover = ({ isMobile = false }) => {
       className={`w-full h-full ${isMobile ? 'p-4 pt-6 pb-6' : 'p-6 pt-6 pb-6'} flex items-center justify-center`}
       style={{ background: '#8bb7e4' }}
     >
-      {!isMobile && <SpiralBinding />}
       <img
         src={image}
         alt="Girls Hoo Hack Logo Mockup"

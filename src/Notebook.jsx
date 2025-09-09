@@ -99,7 +99,7 @@ const Notebook = () => {
                 ref={setFlipBookRef}
                 width={600}
                 height={650}
-                drawShadow={currentPage !== 0}
+                drawShadow={true}
                 showCover={true}
                 usePortrait={false}
                 disableFlipByClick={true}
@@ -110,7 +110,7 @@ const Notebook = () => {
                 className={`transition-transform duration-300 relative rounded-xl shadow-2xl ${offsetX} border-none !outline-none !shadow-none !ring-0 !box-shadow-none`}
               >
                 <div>
-                  <SpiralBinding />
+                  
                   <FrontCover isMobile={isMobile} />
                 </div>
                 <div>

@@ -10,7 +10,7 @@ const BackCover = ({ isMobile = false }) => {
       </div>
       {!isMobile && (
         <div className="absolute top-0 right-0 h-full flex items-center ml-6">
-          <SpiralBinding />
+          
         </div>
       )}
 
