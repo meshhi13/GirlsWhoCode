@@ -166,7 +166,7 @@ const Notebook = () => {
 
         {/* Mobile: stacked, scrollable pages */}
         {isMobile && (
-          <div className="w-full max-w-xl px-4">
+          <div className="w-full max-w-xl px-4 mb-8">
             <div className="mb-6">
               <div className="rounded-lg overflow-hidden shadow-lg bg-white">
                 <FrontCover isMobile={isMobile} />
@@ -203,12 +203,10 @@ const Notebook = () => {
                 {!isMobile && <h3 className="text-lg font-semibold mb-2">Sponsors</h3>}
                 <SponsorsPage isMobile={isMobile} />
               </section>
-
-              <div className="p-4">
-                <div className="rounded-lg overflow-hidden shadow-lg bg-white">
-                  <BackCover isMobile={isMobile} />
-                </div>
-              </div>
+              <section className="p-4 bg-white rounded-lg shadow">
+                {!isMobile && <h3 className="text-lg font-semibold mb-2">Sponsors</h3>}
+                <BackCover isMobile={isMobile} />
+              </section>
             </div>
           </div>
         )}
