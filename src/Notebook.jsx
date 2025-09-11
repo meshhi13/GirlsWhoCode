@@ -17,6 +17,9 @@ const Notebook = () => {
   const aboutAndMissionRef = useRef(null);
   const scheduleAndFAQRef = useRef(null);
   const contactAndSponsorsRef = useRef(null);
+
+  // responsive: switch to stacked mobile layout below this width
+  const mobileThreshold = 900;
   
   const [currentPage, setCurrentPage] = useState(0);
   const [pageFlipInstance, setPageFlipInstance] = useState(null);
@@ -24,11 +27,21 @@ const Notebook = () => {
     typeof window !== 'undefined' ? window.innerWidth : 0
   );
 
+  const isMobile = windowWidth <= mobileThreshold;
+  const totalPages = 8;
+  const isFrontCover = currentPage === 0;
+  const isBackCover = currentPage === totalPages - 1;
+
+
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  useEffect(() => {
+    setCurrentPage(0);
+  }, [isMobile])
 
   const setFlipBookRef = (ref) => {
     if (ref && ref.pageFlip) {
@@ -36,14 +49,6 @@ const Notebook = () => {
     }
     flipBookRef.current = ref;
   };
-
-  const totalPages = 8;
-  const isFrontCover = currentPage === 0;
-  const isBackCover = currentPage === totalPages - 1;
-
-  // responsive: switch to stacked mobile layout below this width
-  const mobileThreshold = 900;
-  const isMobile = windowWidth <= mobileThreshold;
 
   let offsetX = '';
   if (isFrontCover) offsetX = '-translate-x-1/4';

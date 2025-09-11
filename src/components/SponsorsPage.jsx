@@ -1,6 +1,9 @@
 'use client';
 import React from 'react';
 import SpiralBinding from './SpiralBinding';
+import CapitalOne from '../images/capitalonesponsor.png';
+import CoStarGroup from '../images/costargroupsponsor.png';
+
 
 const SponsorsPage = ({ isMobile = false }) => {
   return (
@@ -14,19 +17,17 @@ const SponsorsPage = ({ isMobile = false }) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
           <div className="group relative z-0 overflow-hidden border-2 border-yellow-500 p-2 rounded shadow-lg flex items-center text-xs bg-yellow-50 transform-gpu transition duration-200 hover:scale-105 hover:shadow-2xl group-hover:z-10">
             <img
-              src="https://via.placeholder.com/24"
+              src={CapitalOne}
               alt="Sponsor 1 Logo"
-              className="w-6 h-6 mr-2 object-cover rounded transition-transform duration-200 group-hover:scale-110"
+              className="w-100 h-12 mr-2 object-cover rounded transition-transform duration-200 group-hover:scale-110"
             />
-            <span className="text-xs text-gray-800 transition-colors duration-200">Sponsor 1</span>
           </div>
           <div className="group relative z-0 overflow-hidden border-2 border-yellow-500 p-2 rounded shadow-lg flex items-center text-xs bg-yellow-50 transform-gpu transition duration-200 hover:scale-105 hover:shadow-2xl group-hover:z-10">
             <img
-              src="https://via.placeholder.com/24"
+              src={CoStarGroup}
               alt="Sponsor 2 Logo"
-              className="w-6 h-6 mr-2 object-cover rounded transition-transform duration-200 group-hover:scale-110"
+              className="w-100 h-12 mr-2 object-cover rounded transition-transform duration-200 group-hover:scale-110"
             />
-            <span className="text-xs text-gray-800 transition-colors duration-200">Sponsor 2</span>
           </div>
         </div>
   </div>
