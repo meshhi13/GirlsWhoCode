@@ -16,7 +16,7 @@ const TopBanner = ({ pageHelper }) => {
 
   return (
     <header className="w-full shadow-md border-b-4 border-[#FFC6F2] bg-[#A2D2FF]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col md:flex-row items-start md:items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex flex-col md:flex-row items-start md:items-center justify-between">
         {/* Title */}
         <div className="text-left mb-4 md:mb-0">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#FFB6C1]">

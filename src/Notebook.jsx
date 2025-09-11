@@ -84,7 +84,7 @@ const Notebook = () => {
         }}
       />
 
-      <div className="flex flex-col justify-center items-center pt-6 relative w-full">
+      <div className="h-full flex flex-col justify-center items-center pt-2 relative w-full">
         {/* Desktop / large screens: show flipbook */}
         {!isMobile && (
           <div className="relative">
@@ -98,7 +98,7 @@ const Notebook = () => {
               <HTMLFlipBook
                 ref={setFlipBookRef}
                 width={600}
-                height={650}
+                height={725}
                 drawShadow={true}
                 showCover={true}
                 usePortrait={false}
