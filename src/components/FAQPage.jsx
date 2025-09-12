@@ -60,10 +60,10 @@ const FAQPage = ({ isMobile = false }) => {
   const toggleFaq = (index) => setOpenIndex((prev) => (prev === index ? null : index));
 
   return (
-    <div className={`w-full h-full bg-white ${isMobile ? 'p-4 pt-6 pb-6' : 'p-6 pt-20 pb-6'} relative`}>
+    <div className={`notebook-page-right w-full h-full ${isMobile ? 'p-4 pt-6 pb-6' : 'p-6 pt-20 pb-6'} relative`}>
 
-      <h2 className={`text-lg font-bold text-gray-800 mb-6 ${isMobile ? 'px-4' : 'ml-12 sticky bg-white z-10'}`}>
-        Frequently Asked Questions
+      <h2 className={`text-lg font-bold text-gray-800 mb-6 ${isMobile ? 'px-4' : 'ml-12 sticky z-10'}`}>
+        FAQ
       </h2>
 
       <div className={`${isMobile ? 'space-y-3 px-4' : 'space-y-2 ml-12'} ${isMobile ? '' : 'h-[calc(100%-9rem)] overflow-y-auto pr-4'}`}>

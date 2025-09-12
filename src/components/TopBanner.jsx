@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 const TopBanner = ({ pageHelper }) => {
-  const tabs = ['About and Mission', 'Schedule and FAQ', 'Contact and Sponsors'];
+  const tabs = ['about & mission', 'schedule & faq', 'contact & sponsors'];
   const [disabled, setDisabled] = useState(false);
 
   const handleClick = (tab) => {
@@ -15,13 +15,12 @@ const TopBanner = ({ pageHelper }) => {
   };
 
   return (
-    <header className="w-full shadow-md border-b-4 border-[#FFC6F2] bg-[#A2D2FF]">
+    <header className="w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex flex-col md:flex-row items-start md:items-center justify-between">
         {/* Title */}
         <div className="text-left mb-4 md:mb-0">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#FFB6C1]">
-            Girls Hoo Hack
-          </h1>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#102f76]">
+          </h2>
         </div>
 
         {/* Navigation Tabs */}
@@ -29,7 +28,7 @@ const TopBanner = ({ pageHelper }) => {
           {tabs.map((tab) => (
             <button
               key={tab}
-              className={`bg-[#FFB6C1] text-[#A2D2FF] font-semibold px-3 sm:px-4 py-2 rounded-lg shadow hover:bg-[#FFC6F2] transition text-sm sm:text-base ${
+              className={`font-poppins text-[#1d3557] opacity-80 font-bold px-3 sm:px-4 py-2 rounded-xl shadow-lg hover:bg-[#FFC6F2] transition text-sm sm:text-base ${
                 disabled ? 'opacity-50 cursor-not-allowed' : ''
               } w-full sm:w-auto text-center`}
               onClick={() => handleClick(tab)}
