@@ -61,7 +61,7 @@ const Notebook = () => {
 
           if (!pageFlipInstance && !isMobile) return;
           switch (tab) {
-            case 'About and Mission':
+            case 'about & mission':
               if (isMobile) {
                 setTimeout(() => {aboutAndMissionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 10);
               } else {
@@ -69,7 +69,7 @@ const Notebook = () => {
                 setCurrentPage(1);
               }
               break;
-            case 'Schedule and FAQ':
+            case 'schedule & faq':
               if (isMobile) {
                 setTimeout(() => {scheduleAndFAQRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 10);
               } else {
@@ -77,7 +77,7 @@ const Notebook = () => {
                 setCurrentPage(3);
               }
               break;
-            case 'Contact and Sponsors':
+            case 'contact & sponsors':
               if (isMobile) {
                 setTimeout(() => {contactAndSponsorsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 10);
               } else {  
@@ -144,7 +144,7 @@ const Notebook = () => {
 
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-4">
               <button
-                className="px-4 py-2 text-lg rounded-lg shadow font-semibold bg-[#FFB6C1] text-[#A2D2FF] hover:bg-[#FFC6F2] transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="font-poppins px-4 py-2 text-lg rounded-lg font-semibold opacity-70 text-[#1d3557] hover:text-[#FFFFFF] transition disabled:opacity-30 disabled:cursor-not-allowed"
                 onClick={() => {
                   if (!pageFlipInstance) return;
                   pageFlipInstance.flipPrev();
@@ -152,10 +152,10 @@ const Notebook = () => {
                 }}
                 disabled={isFrontCover}
               >
-                ◀ Prev
+                ◀ back
               </button>
               <button
-                className="px-4 py-2 text-lg rounded-lg shadow font-semibold bg-[#FFB6C1] text-[#A2D2FF] hover:bg-[#FFC6F2] transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="font-poppins px-4 py-2 text-lg rounded-lg font-semibold opacity-70 text-[#1d3557] hover:text-[#FFFFFF] transition disabled:opacity-30 disabled:cursor-not-allowed"
                 onClick={() => {
                   if (!pageFlipInstance) return;
                   pageFlipInstance.flipNext();
@@ -163,7 +163,7 @@ const Notebook = () => {
                 }}
                 disabled={isBackCover}
               >
-                Next ▶
+                flip ▶
               </button>
             </div>
           </div>
