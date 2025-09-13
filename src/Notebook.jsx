@@ -1,16 +1,16 @@
 'use client';
-import React, { useState, useEffect, useRef } from 'react';
-import HTMLFlipBook from 'react-pageflip';
-import FrontCover from '@components/FrontCover';
-import BackCover from '@components/BackCover';
-import SpiralBinding from '@components/SpiralBinding';
 import AboutPage from '@components/AboutPage';
+import BackCover from '@components/BackCover';
+import ContactPage from '@components/ContactUs';
+import FAQPage from '@components/FAQPage';
+import FrontCover from '@components/FrontCover';
 import MissionPage from '@components/MissionPage';
 import SchedulePage from '@components/SchedulePage';
-import FAQPage from '@components/FAQPage';
-import ContactPage from '@components/ContactUs';
-import TopBanner from '@components/TopBanner';
+import SpiralBinding from '@components/SpiralBinding';
 import SponsorsPage from '@components/SponsorsPage';
+import TopBanner from '@components/TopBanner';
+import React, { useEffect, useRef, useState } from 'react';
+import HTMLFlipBook from 'react-pageflip';
 
 const Notebook = () => {
   const flipBookRef = useRef(null);
@@ -20,7 +20,7 @@ const Notebook = () => {
 
   // responsive: switch to stacked mobile layout below this width
   const mobileThreshold = 900;
-  
+
   const [currentPage, setCurrentPage] = useState(0);
   const [pageFlipInstance, setPageFlipInstance] = useState(null);
   const [windowWidth, setWindowWidth] = useState(
@@ -32,7 +32,6 @@ const Notebook = () => {
   const isFrontCover = currentPage === 0;
   const isBackCover = currentPage === totalPages - 1;
 
-
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
@@ -41,7 +40,7 @@ const Notebook = () => {
 
   useEffect(() => {
     setCurrentPage(0);
-  }, [isMobile])
+  }, [isMobile]);
 
   const setFlipBookRef = (ref) => {
     if (ref && ref.pageFlip) {
@@ -58,12 +57,16 @@ const Notebook = () => {
     <div className='min-h-screen'>
       <TopBanner
         pageHelper={(tab) => {
-
           if (!pageFlipInstance && !isMobile) return;
           switch (tab) {
             case 'about & mission':
               if (isMobile) {
-                setTimeout(() => {aboutAndMissionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 10);
+                setTimeout(() => {
+                  aboutAndMissionRef.current?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                  });
+                }, 10);
               } else {
                 pageFlipInstance.turnToPage(1);
                 setCurrentPage(1);
@@ -71,7 +74,9 @@ const Notebook = () => {
               break;
             case 'schedule & faq':
               if (isMobile) {
-                setTimeout(() => {scheduleAndFAQRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 10);
+                setTimeout(() => {
+                  scheduleAndFAQRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 10);
               } else {
                 pageFlipInstance.turnToPage(3);
                 setCurrentPage(3);
@@ -79,8 +84,13 @@ const Notebook = () => {
               break;
             case 'contact & sponsors':
               if (isMobile) {
-                setTimeout(() => {contactAndSponsorsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 10);
-              } else {  
+                setTimeout(() => {
+                  contactAndSponsorsRef.current?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                  });
+                }, 10);
+              } else {
                 pageFlipInstance.turnToPage(5);
                 setCurrentPage(5);
               }
@@ -89,16 +99,16 @@ const Notebook = () => {
         }}
       />
 
-      <div className="h-full flex flex-col justify-center items-center pt-2 relative w-full">
+      <div className='relative flex h-full w-full flex-col items-center justify-center pt-2'>
         {/* Desktop / large screens: show flipbook */}
         {!isMobile && (
-          <div className="relative">
+          <div className='relative'>
             <div
               style={{
                 transform: `scale(${Math.min(1, window.innerWidth / 1500)})`,
                 transformOrigin: 'top center',
               }}
-              className="w-full flex justify-center"
+              className='flex w-full justify-center'
             >
               <HTMLFlipBook
                 ref={setFlipBookRef}
@@ -112,10 +122,9 @@ const Notebook = () => {
                 showPageCorners={false}
                 clickEvent={(e) => console.log(e)}
                 onInit={(pageFlip) => setPageFlipInstance(pageFlip)}
-                className={`transition-transform duration-300 relative rounded-xl shadow-2xl ${offsetX} border-none !outline-none !shadow-none !ring-0 !box-shadow-none`}
+                className={`relative rounded-xl shadow-2xl transition-transform duration-300 ${offsetX} !box-shadow-none border-none !shadow-none !ring-0 !outline-none`}
               >
                 <div>
-                  
                   <FrontCover isMobile={isMobile} />
                 </div>
                 <div>
@@ -142,9 +151,9 @@ const Notebook = () => {
               </HTMLFlipBook>
             </div>
 
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-4">
+            <div className='absolute bottom-8 left-1/2 flex -translate-x-1/2 gap-4'>
               <button
-                className="font-poppins px-4 py-2 text-lg rounded-lg font-semibold opacity-70 text-[#1d3557] hover:text-[#FFFFFF] transition disabled:opacity-30 disabled:cursor-not-allowed"
+                className='font-poppins rounded-lg px-4 py-2 text-lg font-semibold text-[#1d3557] opacity-70 transition hover:text-[#FFFFFF] disabled:cursor-not-allowed disabled:opacity-30'
                 onClick={() => {
                   if (!pageFlipInstance) return;
                   pageFlipInstance.flipPrev();
@@ -155,7 +164,7 @@ const Notebook = () => {
                 ◀ back
               </button>
               <button
-                className="font-poppins px-4 py-2 text-lg rounded-lg font-semibold opacity-70 text-[#1d3557] hover:text-[#FFFFFF] transition disabled:opacity-30 disabled:cursor-not-allowed"
+                className='font-poppins rounded-lg px-4 py-2 text-lg font-semibold text-[#1d3557] opacity-70 transition hover:text-[#FFFFFF] disabled:cursor-not-allowed disabled:opacity-30'
                 onClick={() => {
                   if (!pageFlipInstance) return;
                   pageFlipInstance.flipNext();
@@ -171,45 +180,45 @@ const Notebook = () => {
 
         {/* Mobile: stacked, scrollable pages */}
         {isMobile && (
-          <div className="w-full max-w-xl px-4 mb-8">
-            <div className="mb-6">
-              <div className="rounded-lg overflow-hidden shadow-lg bg-white">
+          <div className='mb-8 w-full max-w-xl px-4'>
+            <div className='mb-6'>
+              <div className='overflow-hidden rounded-lg bg-white shadow-lg'>
                 <FrontCover isMobile={isMobile} />
               </div>
             </div>
 
-            <div className="space-y-4">
-              <section ref={aboutAndMissionRef} className="p-4 bg-white rounded-lg shadow">
-                {!isMobile && <h3 className="text-lg font-semibold mb-2">About</h3>}
+            <div className='space-y-4'>
+              <section ref={aboutAndMissionRef} className='rounded-lg bg-white p-4 shadow'>
+                {!isMobile && <h3 className='mb-2 text-lg font-semibold'>About</h3>}
                 <AboutPage isMobile={isMobile} />
               </section>
 
-              <section className="p-4 bg-white rounded-lg shadow">
-                {!isMobile && <h3 className="text-lg font-semibold mb-2">Mission</h3>}
+              <section className='rounded-lg bg-white p-4 shadow'>
+                {!isMobile && <h3 className='mb-2 text-lg font-semibold'>Mission</h3>}
                 <MissionPage isMobile={isMobile} />
               </section>
 
-              <section ref={scheduleAndFAQRef} className="p-4 bg-white rounded-lg shadow">
-                {!isMobile && <h3 className="text-lg font-semibold mb-2">Schedule</h3>}
+              <section ref={scheduleAndFAQRef} className='rounded-lg bg-white p-4 shadow'>
+                {!isMobile && <h3 className='mb-2 text-lg font-semibold'>Schedule</h3>}
                 <SchedulePage isMobile={isMobile} />
               </section>
 
-              <section className="p-4 bg-white rounded-lg shadow">
-                {!isMobile && <h3 className="text-lg font-semibold mb-2">FAQ</h3>}
+              <section className='rounded-lg bg-white p-4 shadow'>
+                {!isMobile && <h3 className='mb-2 text-lg font-semibold'>FAQ</h3>}
                 <FAQPage isMobile={isMobile} />
               </section>
 
-              <section ref={contactAndSponsorsRef} className="p-4 bg-white rounded-lg shadow">
-                {!isMobile && <h3 className="text-lg font-semibold mb-2">Contact</h3>}
+              <section ref={contactAndSponsorsRef} className='rounded-lg bg-white p-4 shadow'>
+                {!isMobile && <h3 className='mb-2 text-lg font-semibold'>Contact</h3>}
                 <ContactPage isMobile={isMobile} />
               </section>
 
-              <section className="p-4 bg-white rounded-lg shadow">
-                {!isMobile && <h3 className="text-lg font-semibold mb-2">Sponsors</h3>}
+              <section className='rounded-lg bg-white p-4 shadow'>
+                {!isMobile && <h3 className='mb-2 text-lg font-semibold'>Sponsors</h3>}
                 <SponsorsPage isMobile={isMobile} />
               </section>
-              <section className="p-4 bg-white rounded-lg shadow">
-                {!isMobile && <h3 className="text-lg font-semibold mb-2">Sponsors</h3>}
+              <section className='rounded-lg bg-white p-4 shadow'>
+                {!isMobile && <h3 className='mb-2 text-lg font-semibold'>Sponsors</h3>}
                 <BackCover isMobile={isMobile} />
               </section>
             </div>
