@@ -19,8 +19,6 @@ const TopBanner = ({ pageHelper }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex flex-col md:flex-row items-start md:items-center justify-between">
         {/* Title */}
         <div className="text-left mb-4 md:mb-0">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#102f76]">
-          </h2>
         </div>
 
         {/* Navigation Tabs */}
