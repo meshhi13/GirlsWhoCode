@@ -82,7 +82,7 @@ const Notebook = () => {
                 setCurrentPage(3);
               }
               break;
-            case 'contact & sponsors':
+            case 'stats & sponsors':
               if (isMobile) {
                 setTimeout(() => {
                   contactAndSponsorsRef.current?.scrollIntoView({

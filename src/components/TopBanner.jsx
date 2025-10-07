@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 const TopBanner = ({ pageHelper }) => {
-  const tabs = ['about & mission', 'schedule & faq', 'contact & sponsors'];
+  const tabs = ['about & mission', 'schedule & faq', 'stats & sponsors'];
   const [disabled, setDisabled] = useState(false);
 
   const handleClick = (tab) => {

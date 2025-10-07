@@ -1,5 +1,5 @@
 "use client";
-import logo from '@images/paper_background.jpeg';
+import logo from '@images/ghhwebsitebg2.png';
 import React from 'react';
 import Notebook from './Notebook';
 
