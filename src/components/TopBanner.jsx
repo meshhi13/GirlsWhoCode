@@ -26,9 +26,17 @@ const TopBanner = ({ pageHelper }) => {
           {tabs.map((tab) => (
             <button
               key={tab}
-              className={`font-poppins text-[#1d3557] opacity-80 font-bold px-3 sm:px-4 py-2 rounded-xl shadow-lg hover:bg-[#FFC6F2] transition text-sm sm:text-base ${
-                disabled ? 'opacity-50 cursor-not-allowed' : ''
-              } w-full sm:w-auto text-center`}
+              className={`
+                font-poppins 
+                text-[#1d3557] 
+                font-bold 
+                px-3 sm:px-4 py-1.5
+                rounded-full shadow-lg 
+                bg-white/70 hover:bg-white/95 
+                transition text-sm sm:text-base 
+                ${disabled ? 'opacity-70 cursor-not-allowed' : ''}
+                w-full sm:w-auto text-center
+              `}
               onClick={() => handleClick(tab)}
               disabled={disabled}
             >
