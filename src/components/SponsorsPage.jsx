@@ -76,11 +76,17 @@ const SponsorsPage = ({ isMobile = false }) => {
               alt='Paperclip'
               className='absolute -left-4 top-1/4 w-6 h-18'
             />
-            <img
-              src={BronzeImg}
-              alt='Bronze Sponsor'
-              className='shadow-lg object-cover max-w-full max-h-32'
-            />
+      <a
+        href='https://www.purebuttons.com/'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        <img
+          src={BronzeImg}
+          alt='Bronze Sponsor'
+          className='shadow-lg object-cover max-w-full max-h-32 cursor-pointer'
+        />
+      </a>
           </div>
         </div>
       </div>
