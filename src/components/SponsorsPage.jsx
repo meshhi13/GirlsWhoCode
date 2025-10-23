@@ -2,31 +2,34 @@
 import React from 'react';
 import SpiralBinding from './SpiralBinding';
 
-// Import your images
 import GoldImg from '../images/cap.jpg';
 import SilverImg from '../images/costar.jpg';
 import BronzeImg from '../images/bronze.jpg';
 import Paperclip from '../images/paperclip.png';
 
+import FlatlogicImg from '../images/flatlogic.PNG';
+import IncogniImg from '../images/incogni.PNG';
+import NordPassImg from '../images/nordpass.PNG';
+import NordVPNImg from '../images/nordvpn.JPEG';
+import SailyImg from '../images/saily.PNG';
+
 const SponsorsPage = ({ isMobile = false }) => {
   return (
     <div
-      className={`notebook-page-right h-full w-full ${
-        isMobile ? 'p-4 pt-6 pb-6' : 'pt-20'
+      className={`notebook-page-right h-full w-full !pt-15 ${
+        isMobile ? 'p-4 pt-6 pb-6' : 'pt-10'
       } relative`}
     >
-      <h2 className={`mb-6 text-lg font-bold text-gray-800 text-center`}>
+      <h2 className={`mb-3 text-lg font-bold text-gray-800 text-center`}>
         our sponsors
       </h2>
 
-      {/* Gold */}
-      <div className={`mb-8 ${isMobile ? 'px-4' : ''}`}>
+      <div className={`mb-6 ${isMobile ? 'px-4' : ''}`}>
         <h2 className='!text-[15px] text-base font-semibold text-yellow-600 text-center mb-1'>
           gold sponsor
         </h2>
         <div className='flex justify-center'>
           <div className='relative transform rotate-[-2deg]'>
-            {/* Paperclip on left edge, slightly higher */}
             <img
               src={Paperclip}
               alt='Paperclip'
@@ -35,20 +38,18 @@ const SponsorsPage = ({ isMobile = false }) => {
             <img
               src={GoldImg}
               alt='Gold Sponsor'
-              className='shadow-lg object-cover max-w-full max-h-28'
+              className='shadow-lg object-cover max-w-full max-h-20'
             />
           </div>
         </div>
       </div>
 
-      {/* Silver */}
-      <div className={`mb-8 ${isMobile ? 'px-4' : ''}`}>
+      <div className={`mb-6 ${isMobile ? 'px-4' : ''}`}>
         <h2 className='!text-[15px] text-base font-semibold text-gray-500 text-center mb-1'>
           silver sponsor
         </h2>
         <div className='flex justify-center'>
           <div className='relative transform rotate-[2deg]'>
-            {/* Paperclip on right edge, slightly higher */}
             <img
               src={Paperclip}
               alt='Paperclip'
@@ -57,25 +58,23 @@ const SponsorsPage = ({ isMobile = false }) => {
             <img
               src={SilverImg}
               alt='Silver Sponsor'
-              className='shadow-lg object-cover max-w-full max-h-24'
+              className='shadow-lg object-cover max-w-full max-h-20'
             />
           </div>
         </div>
       </div>
 
-      {/* Bronze */}
-      <div className={`mb-8 ${isMobile ? 'px-4' : ''}`}>
-        <h2 className='!text-[15px] text-base font-semibold text-amber-700 text-center mb-1'>
-          bronze sponsor
-        </h2>
-        <div className='flex justify-center'>
-          <div className='relative transform rotate-[-1deg]'>
-            {/* Paperclip on left edge, slightly higher */}
-            <img
-              src={Paperclip}
-              alt='Paperclip'
-              className='absolute -left-4 top-1/4 w-6 h-18'
-            />
+<div className={`mb-6 ${isMobile ? 'px-4' : ''}`}>
+  <h2 className='!text-[15px] text-base font-semibold text-amber-700 text-center mb-1'>
+    bronze sponsor
+  </h2>
+  <div className='flex justify-center mb-4 gap-4'>
+    <div className='relative transform rotate-[-1deg]'>
+      <img
+        src={Paperclip}
+        alt='Paperclip'
+        className='absolute -left-4 top-1/4 w-6 h-18'
+      />
       <a
         href='https://www.purebuttons.com/'
         target='_blank'
@@ -84,13 +83,77 @@ const SponsorsPage = ({ isMobile = false }) => {
         <img
           src={BronzeImg}
           alt='Bronze Sponsor'
-          className='shadow-lg object-cover max-w-full max-h-32 cursor-pointer'
+          className='shadow-lg object-cover max-w-full max-h-24 cursor-pointer'
         />
       </a>
-          </div>
-        </div>
-      </div>
     </div>
+
+    <a
+      href='https://flatlogic.com/'
+      target='_blank'
+      rel='noopener noreferrer'
+      className='shadow-lg rounded-lg'
+    >
+      <img
+        src={FlatlogicImg}
+        alt='Flatlogic'
+        className='shadow-lg object-cover max-h-24 w-auto rounded-lg'
+      />
+    </a>
+  </div>
+
+  <div className='flex justify-center flex-wrap gap-3'>
+    <a
+      href='https://nordvpn.com/'
+      target='_blank'
+      rel='noopener noreferrer'
+      className='shadow-lg rounded-lg'
+    >
+      <img
+        src={NordVPNImg}
+        alt='NordVPN'
+        className='h-12 w-auto object-contain rounded-lg'
+      />
+    </a>
+    <a
+      href='https://nordpass.com/'
+      target='_blank'
+      rel='noopener noreferrer'
+      className='shadow-lg rounded-lg'
+    >
+      <img
+        src={NordPassImg}
+        alt='NordPass'
+        className='h-12 w-auto object-contain rounded-lg'
+      />
+    </a>
+    <a
+      href='https://incogni.com/'
+      target='_blank'
+      rel='noopener noreferrer'
+      className='shadow-lg rounded-lg'
+    >
+      <img
+        src={IncogniImg}
+        alt='Incogni'
+        className='h-12 w-auto object-contain rounded-lg'
+      />
+    </a>
+    <a
+      href='https://saily.com/'
+      target='_blank'
+      rel='noopener noreferrer'
+      className='shadow-lg rounded-lg'
+    >
+      <img
+        src={SailyImg}
+        alt='Saily'
+        className='h-12 w-auto object-contain rounded-lg'
+      />
+    </a>
+  </div>
+</div>
+</div>
   );
 };
 
