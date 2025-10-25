@@ -62,6 +62,37 @@ const BackCover = ({ isMobile = false }) => {
               </a>
             </p>
           </div>
+
+          <div className="mt-8 space-y-4">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdT1304somoh9ME9QJ64L9ZT-DlU4LdgU_Vvy7_m6ucWfjFDw/closedform"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block bg-[#102f76] text-white font-semibold py-2 px-6 rounded-full shadow-md hover:bg-[#0c245c] transition-all duration-200 no-underline"
+            >
+              Register Now
+            </a>
+
+            <div className="pt-4">
+              <p
+                className="!text-lg font-semibold"
+                style={{
+                  color: 'rgba(16, 47, 118, 0.3)',
+                }}
+              >
+                Website by:
+              </p>
+              <p
+                className="!text-lg font-semibold"
+                style={{
+                  color: 'rgba(16, 47, 118, 0.3)',
+                }}
+              >
+                Mumtaheena Raisa <br />
+                Himesh Ahuja
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -71,4 +102,3 @@ const BackCover = ({ isMobile = false }) => {
 };
 
 export default BackCover;
-
